@@ -1,0 +1,48 @@
+#include <stdio.h>
+void printArray(int arr[], int n) {
+    for (int i = 0; i < n; i++) {
+        printf("%d", arr[i]);
+        if (i < n - 1) printf(", ");
+    }
+    printf("\n");
+}
+void swap(int *a, int *b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+int partition(int arr[], int l, int h, int n) {
+    int chot = arr[h]; 
+    int i = (l - 1);
+    for (int j = l; j <= h - 1; j++) {
+        if (arr[j] < chot) {
+            i++;
+            if (i != j) { 
+                swap(&arr[i], &arr[j]);
+                printf("Swap %d va %d:\t", arr[i], arr[j]);
+                printArray(arr, n);
+            }
+        }
+    }
+    if (i + 1 != h) {
+        swap(&arr[i + 1], &arr[h]);
+        printf("Dua pivot %d vao:\t", arr[i + 1]);
+        printArray(arr, n);
+    }
+    return (i + 1);
+}
+void quickSort(int arr[], int l, int h, int n) {
+    if (l < h) {
+        int pi = partition(arr, l, h, n);
+        quickSort(arr, l, pi - 1, n);
+        quickSort(arr, pi + 1, h, n);
+    }
+}
+int main() {
+    int arr[] = {101, 23, 57, 13, 25, 121, 87, 36, 13, 204, 111, 89, 59};
+    int n = 13; 
+    printf("Ban dau:\t\t");
+    printArray(arr, n);
+    quickSort(arr, 0, n - 1, n);
+    return 0;
+}
