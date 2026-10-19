@@ -1,0 +1,58 @@
+#include <stdio.h>
+void printArray(int arr[], int n) {
+    for (int i = 0; i < n; i++) {
+        printf("%d", arr[i]);
+        if (i < n - 1) printf(", ");
+    }
+    printf("\n");
+}
+void merge(int arr[], int trai, int giua, int phai, int n) {
+    int i, j, k;
+    int n1 = giua - trai + 1;
+    int n2 = phai - giua;
+    int L[13], R[13];
+    for (i = 0; i < n1; i++) L[i] = arr[trai + i];
+    for (j = 0; j < n2; j++) R[j] = arr[giua + 1 + j];
+    i = 0; 
+    j = 0; 
+    k = trai; 
+    while (i < n1 && j < n2) {
+        if (L[i] <= R[j]) {
+            arr[k] = L[i];
+            i++;
+        } else {
+            arr[k] = R[j];
+            j++;
+        }
+        k++;
+    }
+    while (i < n1) {
+        arr[k] = L[i];
+        i++;
+        k++;
+    }
+    while (j < n2) {
+        arr[k] = R[j];
+        j++;
+        k++;
+    }    
+    printf("Tron doan [%d..%d]:\t", trai, phai);
+    printArray(arr, n);
+}
+
+void mergeSort(int arr[], int trai, int phai, int n) {
+    if (trai < phai) {
+        int giua = trai + (phai - trai) / 2;
+        mergeSort(arr, trai, giua, n);
+        mergeSort(arr, giua + 1, phai, n);
+        merge(arr, trai, giua, phai, n);
+    }
+}
+int main() {
+    int arr[] = {101, 23, 57, 13, 25, 121, 87, 36, 13, 204, 111, 89, 59};
+    int n = 13; 
+    printf("Ban dau:\t\t");
+    printArray(arr, n);
+    mergeSort(arr, 0, n - 1, n);
+    return 0;
+}
