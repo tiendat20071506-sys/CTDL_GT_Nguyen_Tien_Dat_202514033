@@ -11,8 +11,13 @@ void timTong(int a[], int n, int target){
 	printf("Pair not found");
 }
 int main(){
-    int a[]={8,8,-4,2,4,54,2,11};
-    int n = sizeof(a)/sizeof(a[0]);
+    int a[100];
+	int n;
+	printf("Ban muon nhap bao nhieu phan tu? (Toi da 100):\n ");
+    scanf("%d", &n);
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &a[i]);
+    } 
     int target;
     scanf("%d", &target);
     timTong(a, n, target);
