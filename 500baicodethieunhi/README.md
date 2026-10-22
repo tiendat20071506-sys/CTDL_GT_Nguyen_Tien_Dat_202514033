@@ -3,7 +3,7 @@ Chương trình này cho phép nhập vào một mảng số nguyên và một g
 
 ## Giải thích thuật toán
 
-Thuật toán được sử dụng là **Vét cạn (Brute Force)**. Chương trình duyệt qua tất cả các cặp số có thể có trong mảng để kiểm tra tổng.
+Thuật toán được sử dụng là Vét cạn (Brute Force). Chương trình duyệt qua tất cả các cặp số có thể có trong mảng để kiểm tra tổng.
 
 1. **Sử dụng 2 vòng lặp lồng nhau:**
    - Vòng lặp ngoài `i` chạy từ phần tử đầu tiên (`0`) đến kề cuối (`n-2`).
