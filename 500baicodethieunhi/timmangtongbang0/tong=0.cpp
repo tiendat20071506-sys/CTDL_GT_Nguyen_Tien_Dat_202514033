@@ -2,10 +2,10 @@
 void timmangtongbang0(int a[], int n) {
     int found = 0;
     for (int i = 0; i < n; i++) {
-        int current_sum = 0;
+        int sum = 0;
         for (int j = i; j < n; j++) {
-            current_sum += arr[j];
-            if (current_sum == 0) {
+            sum += arr[j];
+            if (sum == 0) {
                 if (found == 0) {
                     printf("The subarrays with a sum of 0 are:\n");
                     found = 1; 
