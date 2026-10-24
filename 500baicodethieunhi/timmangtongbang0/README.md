@@ -20,14 +20,12 @@ Chương trình sử dụng phương pháp **Vét cạn (Brute Force)** thông q
 - **Input:**
   - Số lượng phần tử: `5`
   - Các phần tử: `1 2 -3 3 -1`
-- **Output mong đợi:**
+- **Output :**
   > The subarrays with a sum of 0 are:
   > { 1, 2, -3 }
-  > { -3, 3 }
-
 ### Testcase 2: Không tồn tại mảng con nào có tổng bằng 0
 - **Input:**
   - Số lượng phần tử: `4`
   - Các phần tử: `1 3 5 7`
-- **Output mong đợi:**
+- **Output :**
   > Subarray with zero-sum does not exist
