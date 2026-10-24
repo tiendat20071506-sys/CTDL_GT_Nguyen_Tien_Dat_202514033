@@ -1,20 +1,20 @@
 #include <stdio.h>
-void sortBinaryArray(int arr[], int n) {
+void sapXep(int a[], int n) {
     int k = 0;
     for (int i = 0; i < n; i++) {
-        if (arr[i] == 0) {
-            arr[k] = 0;
+        if (a[i] == 0) {
+            a[k] = 0;
             k++;
         }
     }
     for (int i = k; i < n; i++) {
-        arr[i] = 1;
+        a[i] = 1;
     }
 }
-void printArray(int arr[], int n) {
+void in(int a[], int n) {
     printf("{ ");
     for (int i = 0; i < n; i++) {
-        printf("%d", arr[i]);
+        printf("%d", a[i]);
         if (i < n - 1) {
             printf(", ");
         }
@@ -22,10 +22,10 @@ void printArray(int arr[], int n) {
     printf(" }\n");
 }
 int main() {
-    int arr[] = { 1, 0, 1, 0, 1, 0, 0, 1 };
-    int n = sizeof(arr) / sizeof(arr[0]);
-    printArray(arr, n);    
-    sortBinaryArray(arr, n);
-    printArray(arr, n);   
+    int a[] = { 1, 0, 1, 0, 1, 0, 0, 1 };
+    int n = sizeof(a) / sizeof(a[0]);
+    in(a, n);    
+    sapXep(a, n);
+    in(a, n);      
     return 0;
 }
